@@ -1,0 +1,29 @@
+$meta
+  title = Codex — Organizador de Personagens, Mundos e Relações
+  description = Crie fichas de personagens, organizações, lugares e itens com imagem, descrição e campos personalizados, organize tudo em pastas infinitas e deixe a IA reconhecer os nomes e tecer a rede de relações (família, amigos, inimigos, hierarquias) entre eles. Escreva o seu livro em capítulos com texto rico e corretor pt-BR, anexe fichas e imagens ao texto e acompanhe tudo numa linha do tempo conectada.
+  tags = personagens, worldbuilding, rpg, organizador, relações, ia, fichas, livro, escrita, timeline
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}
+uploadPlugin = {import:upload-plugin}
+superFetch = {import:super-fetch-plugin}
+generateText = {import:ai-text-plugin}
+generateImage = {import:text-to-image-plugin}
+
+codex
+  appTitle = Codex
+  aiPersona = Você é um arquivista profissional de worldbuilding. Você organiza fichas de personagens, organizações, lugares e itens, e tece a rede de relações entre eles com precisão. Você sempre responde em português do Brasil e nunca inventa fatos que contradigam o material fornecido.
+  maxSuggestions = 6
+  maxCatalog = 160
+  maxImagensPorFicha = 9
+  imageTipos
+    Retrato
+    Corpo inteiro
+    Expressões
+    Traje
+    Combate
+    Alternativo
+    Cenário
+
+
