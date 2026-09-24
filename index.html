@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="src/style.css">
+
+<div id="loadingOverlay">
+  <div class="loadBox">
+    <span class="spinner ai"></span>
+    <h2>Codex</h2>
+    <p>Abrindo seu arquivo…</p>
+  </div>
+</div>
+
+<div id="app" class="sidebarOpen">
+  <header id="topbar">
+    <button id="menuToggle" class="iconBtn" title="Pastas">☰</button>
+    <button id="uniBtn" class="brand uniBrand" title="Biblioteca de Codexs — criar, abrir, exportar">
+      <span class="brandMark" id="uniMark">🌍</span>
+      <span class="brandText" id="uniNameEl">Codex</span>
+      <span class="uniCaret">▾</span>
+    </button>
+    <div id="searchWrap" class="searchWrap">
+      <span class="searchGlyph">🔍</span>
+      <input id="globalSearchInput" placeholder="Buscar fichas, apelidos, etiquetas…" autocomplete="off" spellcheck="false">
+      <button id="globalSearchClear" class="iconBtn tiny" title="Limpar">✕</button>
+      <div id="searchResultsCtn" class="searchResults" hidden></div>
+    </div>
+    <nav id="viewTabs">
+      <button class="tab" data-view="present"><span class="tabIcon">🏠</span><span class="tabText">Apresentação</span></button>
+      <button class="tab active" data-view="browse"><span class="tabIcon">📇</span><span class="tabText">Fichas</span></button>
+      <button class="tab" data-view="graph"><span class="tabIcon">🕸️</span><span class="tabText">Rede</span></button>
+      <button class="tab" data-view="tree"><span class="tabIcon">👪</span><span class="tabText">Árvore</span></button>
+      <button class="tab" data-view="book"><span class="tabIcon">📖</span><span class="tabText">Livro</span></button>
+      <button class="tab" data-view="timeline"><span class="tabIcon">⏳</span><span class="tabText">Timeline</span></button>
+      <button class="tab" data-view="competencia"><span class="tabIcon">⚡</span><span class="tabText">Competência</span></button>
+    </nav>
+    <div class="topActions">
+      <button id="newBtn" class="btn primary" title="Nova ficha (n)">＋<span class="btnText"> Nova</span></button>
+      <button id="dataBtn" class="iconBtn" title="Arquivo e preferências">⋯</button>
+    </div>
+  </header>
+
+  <main id="views">
+    <section id="presentView" class="view" hidden></section>
+
+    <section id="browseView" class="view">
+      <aside id="sidebar">
+        <div class="paneHead">
+          <span>Organização</span>
+          <button id="newFolderBtn" class="iconBtn tiny" title="Nova pasta">＋</button>
+        </div>
+        <div id="folderTree" class="folderTree"></div>
+      </aside>
+      <section id="listPane">
+        <div id="listHead" class="listHead"></div>
+        <div id="entityList" class="entityList grid"></div>
+      </section>
+      <section id="detailPane">
+        <button id="detailBackBtn" class="iconBtn backBtn" title="Voltar">←</button>
+        <div id="detailBody" class="detailBody"></div>
+      </section>
+    </section>
+
+    <section id="bookView" class="view" hidden></section>
+
+    <section id="timelineView" class="view" hidden></section>
+
+    <section id="competenciaView" class="view" hidden></section>
+
+    <section id="graphView" class="view" hidden>
+      <div id="graphToolbar" class="graphToolbar"></div>
+      <div class="graphStage">
+        <canvas id="graphCanvas"></canvas>
+        <div id="graphInfo" class="graphInfo"></div>
+        <div id="graphStats" class="graphStats"></div>
+        <div class="graphHelp">arraste para mover · roda do mouse = zoom · clique duplo = abrir ficha</div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toastRoot"></div>
+
+<script type="module" src="src/main.js"></script>
+
